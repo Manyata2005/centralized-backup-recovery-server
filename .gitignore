@@ -1,0 +1,11 @@
+backups/
+restore/
+logs/
+*.tar.gz
+*.sha256
+*.snar
+*.snapshot
+*.token
+.env
+__pycache__/
+.run/

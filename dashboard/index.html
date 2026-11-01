@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Backup & Recovery Server</title><link rel="stylesheet" href="/style.css"></head><body>
+<aside><h1>🛡️ BackupHub</h1><nav>
+<a data-p="dash" class="on">📊 Dashboard</a><a data-p="create">➕ Create Backup</a><a data-p="history">🗂️ Backup History</a>
+<a data-p="verify">✅ Verify</a><a data-p="restore">♻️ Restore</a><a data-p="logs">📜 Activity Logs</a><a data-p="sched">⏰ Scheduling</a></nav></aside>
+<main>
+<section id="dash"><h2>Overview</h2><div class="cards">
+<div class="card"><small>Full backups</small><b id="c-full">-</b></div><div class="card"><small>Incremental</small><b id="c-incr">-</b></div>
+<div class="card"><small>Archives</small><b id="c-total">-</b></div><div class="card"><small>Latest backup</small><b id="c-time" class="sm">-</b></div>
+<div class="card"><small>Latest status</small><b id="c-stat" class="sm">-</b></div></div>
+<h3>Recent activity</h3><pre id="recent"></pre></section>
+<section id="create" hidden><h2>Create Backup</h2><button class="btn" id="b-full">Create Full Backup</button> <button class="btn alt" id="b-incr">Create Incremental Backup</button><pre id="out1"></pre></section>
+<section id="history" hidden><h2>Backup History</h2><table><thead><tr><th>Filename</th><th>Type</th><th>Size</th><th>Created</th><th>Verification</th></tr></thead><tbody id="tb"></tbody></table></section>
+<section id="verify" hidden><h2>Verify Backup (sha256sum -c)</h2><select id="sv"></select> <button class="btn" id="b-ver">Verify</button><pre id="out2"></pre></section>
+<section id="restore" hidden><h2>Restore (to restore/ directory only)</h2><select id="sr"></select> <button class="btn" id="b-res">Restore</button><pre id="out3"></pre></section>
+<section id="logs" hidden><h2>Activity Logs</h2><button class="btn alt" id="b-log">Refresh</button><pre id="out4"></pre></section>
+<section id="sched" hidden><h2>Automatic Scheduling</h2><p>Current crontab:</p><pre id="out5"></pre><button class="btn" id="b-sch">Schedule daily full backup at 8:00 PM</button></section>
+</main><div id="busy" hidden><div class="spin"></div></div><div id="toast"></div><script src="/app.js"></script></body></html>
